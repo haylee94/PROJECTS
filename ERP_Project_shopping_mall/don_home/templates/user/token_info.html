@@ -1,0 +1,16 @@
+<form method="POST">
+    {% csrf_token %}
+    <button class="btn btn-primary btn-block" name="ablycrawling">데이터 가져오기</button>
+</form>
+
+{% if ably_data %}
+    {% for da in ably_data %}
+    <p>{{ da.orderName }}</p>
+    {% endfor %}
+{% else %}
+<p>현재 데이터가 없습니다</p>
+{% endif %}
+
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script src='//code.jquery.com/ui/1.11.4/jquery-ui.js'></script>
