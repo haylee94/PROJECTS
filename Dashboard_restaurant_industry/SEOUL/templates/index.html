@@ -1,0 +1,31 @@
+<!--html 상속-->
+{% extends "base.html"%}
+{% block content %}
+
+<!--Bootstrap UI 요소 추가-->
+<div class="jumbotron">
+<h2>창업의 문 앞에 오신걸 환영합니다!</h2>
+<p>사용자 ID를 확인하는 페이지입니다. 다음 조건을 유의하여 ID를 입력해주세요.</p>
+<ul>
+    <li>최소한 하나의 대문자 포함한다.</li>
+
+    <li>최소한 하나의 소문자를 포함한다.</li>
+
+    <li>마지막은 숫자로 끝나야 한다.</li>
+</ul>
+
+<!--입력 form을 추가 하고 “report” 페이지로 연결한다.-->
+<form action="{{url_for('report')}}">
+<label for="first">User ID : </label>
+<input type="text" name="userid">
+
+<!--submit 버튼을 추가한다.-->
+<input class="btn btn-primary" type="submit" value="Submit Form">
+</form>
+</div>
+
+{% endblock %}
+
+<!--block content ~~ endblock 사이의 내용만 추가 되는것이고, 
+#나머지 내용은 상속해준 base.html의 내용을 따라가게 되어 
+#반복적으로 복잡한 코드를 적을 필요가 없게 된다.-->
